@@ -1,7 +1,7 @@
 ### Integration and analysis of Lung macrophage cells from patients with COVID-19, Idiopathic pulmonary fibrosis,  COPD. 
 The following notebooks described the data integration, data exploration and *proximity analysis* steps of Methods as implemented in
 
-**Wendisch *et al.* (2021). (*In press*).**
+**Wendisch, Dietrich, Mari *et al.* (2021). (*In press*).**
 
 Scripts in `notebooks` indicate the main routines including additional data from Budinger *et al.*. Main processing steps and analyses are divided into three main steps:
   1. Data Preparation of Adams/Morse/Bharat and our work. H5AD are generated for each dataset using the public raw data, and then deployed in `data`. Pre-processed H5AD files can be downloaded from **this directory**.
