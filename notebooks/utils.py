@@ -5,11 +5,14 @@ import anndata
 import scanpy as sc
 import numpy as np
 import pandas as pd
+from os.path import exists
 # Read Morse et all 
 
 def get_budinger():
     print('budinger')
     path_budinger = '../data/budinger/budinger_input_scvi_scanpy_norm.h5ad'
+    print(exists(path_budinger), path_budinger)
+    assert exists(path_budinger)
     budinger = sc.read_h5ad(path_budinger)
 
     budinger.obs['cell.type'] = budinger.obs['Cluster'].str[2:]
@@ -25,7 +28,12 @@ def get_budinger():
 
 def get_adams():
     print('adams')
-    adams = sc.read_h5ad('../data/adams/adams_input_scvi_Macrophage_scanpy_norm.h5ad')
+
+    path_adams = '../data/adams/adams_input_scvi_Macrophage_scanpy_norm.h5ad'
+    print(exists(path_adams), path_adams)
+    assert exists(path_adams)
+
+    adams = sc.read_h5ad(path_adams)
     adams.layers["counts"] = adams.raw.X.copy()
     adams.obs['study'] = 'adams'
     adams.obs['patient.id'] = adams.obs['Subject_Identity']
@@ -41,7 +49,12 @@ def get_morse():
     rootdir = '../data/morse/by_patient_scanpy_norm_mac'
     ad_all = []
     for f in listdir(rootdir):
-        ad_next = sc.read_h5ad(join(rootdir, f))
+        
+        next_path_morse = join(rootdir, f)
+        print(exists(next_path_morse), next_path_morse)
+        assert exists(next_path_morse)
+    
+        ad_next = sc.read_h5ad(next_path_morse)
         # print(f)
         if ad_next.shape[0] == 0:
             # print(f, 'empty')
@@ -66,8 +79,17 @@ def get_morse():
 def get_bal():
     print('bal')
     # BAL
-    bal = sc.read_h5ad('../data/bal/bal.h5ad')
-    bal_df = pd.read_csv('../data/bal/bal_feature_names.tsv.gz', compression='gzip', sep='\t')
+    path_bal = '../data/bal/bal.h5ad'
+    path_bal_feats = '../data/bal/bal_feature_names.tsv.gz'
+    
+    print(exists(path_bal), path_bal)
+    print(exists(path_bal_feats), path_bal)
+    
+    assert exists(path_bal)
+    assert exists(path_bal_feats)
+    
+    bal = sc.read_h5ad(path_bal)    
+    bal_df = pd.read_csv(path_bal_feats, compression='gzip', sep='\t')
     bal.obs['patient.id'] = bal.obs['patient']
     bal.var['ensembl'] = bal.var.index
 
