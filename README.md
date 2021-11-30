@@ -6,8 +6,8 @@ The following notebooks described the data integration, data exploration and *pr
 Jupyter notebooks located in the directory `notebooks` describe steps for data of external samples and BAL (this study).
 
 ### Processed Data
-Pre-processed H5AD and the integrated object are zipped and available in [**Dropbox (~15 GB)**](https://www.dropbox.com/s/v2fdj5u4svxmj4j/data.zip?dl=0).
-Please update the `data` directory with those.
+Pre-processed datasets and the integrated embedding and zipped and available in h5ad format in [**Dropbox (~14.3 GB)**](https://www.dropbox.com/s/4h46j7ywqou2xry/data.zip).
+To skip pre-processing and integration, please update the `data` directory with those.
 
 ### Pre-processing and integration
 Main processing steps are:
