@@ -1,11 +1,9 @@
 name: covid_macrophages_integration
 channels:
         - default
-        - bioconda
         - conda-forge
 dependencies:
-        - matplotlib
+        - scvi==0.6.7
+        - scanpy
+        - leidenalg
         - seaborn
-        - scvi
-        - scanpy==1.7.1
-        - pandas
