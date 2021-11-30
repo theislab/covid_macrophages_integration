@@ -15,8 +15,8 @@ Main processing steps are:
   2. Data Integration of all datasets using (scVI), and patient/sample IDs as batches.
 
 ### Post integration analyses
-  3.1. UMAP visualization and gene expression analyses using macrophage gene groups post-processing.
-  3.2. Counting and quantification of link between macrophages from COVID-19 patients and IPF, using distances in the kNN graph from the integrated cells as a reference for mapping conditions (i.e. proximity analysis).
+  3. UMAP visualization and gene expression analyses using macrophage gene groups post-processing.
+  4. Counting and quantification of link between macrophages from COVID-19 patients and IPF, using distances in the kNN graph from the integrated cells as a reference for mapping conditions (i.e. proximity analysis).
 
 #### Installation
 To install environment and relevant dependencies, please clone and execute the following command.
@@ -32,11 +32,11 @@ conda install -c conda-forge jupyterlab
 ```
 conda activate covid_macrophages_integration
 conda install -c anaconda ipykernel
-python -m ipykernel install --name covid_macrophages_integration
+python -m ipykernel install --user --name=covid_macrophages_integration
 ```
 
 
 Troubleshooting:
 Please open an [issue](https://github.com/theislab/covid_macrophages_integration/issues).
 
-**License**: MIT.
+**License**: [MIT](https://github.com/theislab/covid_macrophages_integration/blob/main/LICENSE).
